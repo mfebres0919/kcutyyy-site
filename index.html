@@ -201,12 +201,14 @@ nav.solid{background:rgba(6,6,10,.99)}
 }
 
 /* LEFT PANEL — content */
+@keyframes heroFade{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 .hero-left{
   display:flex;flex-direction:column;justify-content:center;
   padding:clamp(48px,8vw,90px) var(--pad);
   background:var(--ink);
   position:relative;z-index:2;
   order:1;
+  animation:heroFade 2.2s ease forwards;
 }
 @media(min-width:760px){
   .hero-left{
@@ -262,6 +264,7 @@ nav.solid{background:rgba(6,6,10,.99)}
   position:relative;overflow:hidden;
   min-height:60vw;order:2;
   padding:0 var(--pad);
+  animation:heroFade 2.6s ease forwards;
 }
 @media(min-width:760px){
   .hero-right{min-height:100svh;order:2;padding:0;}
@@ -1329,7 +1332,9 @@ footer{
   body{max-width:1800px;margin:0 auto}
 }
 /* ── SCROLL FADE-IN ── */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 1.4s ease,transform 1.4s ease;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 2.2s ease,transform 2.2s ease;}
+.reveal-img{opacity:0;transform:translateY(24px);transition:opacity 2.6s ease,transform 2.6s ease;}
+.reveal-img.visible{opacity:1;transform:translateY(0);}
 .reveal.visible{opacity:1;transform:translateY(0);}
 </style>
 </head>
@@ -1510,7 +1515,7 @@ footer{
   <div class="about-inner reveal">
 
     <!-- LEFT: photo -->
-    <div class="about-img-wrap reveal">
+    <div class="about-img-wrap reveal-img">
       <div class="about-img-frame">
         <img src="about-2.png" alt="KCutyyy barber" style="object-position:center top">
       </div>
@@ -1858,7 +1863,7 @@ footer{
       </div>
       <div class="gal-dots" id="galDots"></div>
     </div>
-    <div class="gal-slideshow reveal">
+    <div class="gal-slideshow reveal-img">
       <div class="gal-track-wrap">
         <div class="gal-track" id="galTrack">
           <div class="gal-slide active-slide" data-src="client10.png"><img src="client10.png" alt="Gallery 1" loading="lazy"><div class="gal-slide-veil"><span class="gal-slide-num">01</span></div><div class="gal-slide-overlay"><button class="gal-expand" onclick="openLb(0)">View Photo</button></div></div>
@@ -2581,7 +2586,7 @@ if(window.matchMedia('(pointer:fine)').matches){
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
   },{threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  document.querySelectorAll('.reveal, .reveal-img').forEach(function(el){ io.observe(el); });
 })();
 </script>
 
