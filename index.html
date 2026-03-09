@@ -298,69 +298,47 @@ nav.solid{background:rgba(6,6,10,.99)}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ═══════════════════════════════════════
-   SERVICES — HORIZONTAL SCROLL
+   SERVICES CAROUSEL
 ═══════════════════════════════════════ */
 .services{
   background:var(--ink2);
-  padding:clamp(48px,10vw,100px) 0 clamp(48px,10vw,100px) var(--pad);
+  padding:clamp(48px,10vw,100px) var(--pad);
   overflow:hidden;
 }
 .svc-header{
   display:flex;align-items:flex-end;justify-content:flex-start;
-  padding-right:var(--pad);margin-bottom:clamp(28px,5vw,52px);
+  margin-bottom:clamp(28px,5vw,52px);
   gap:clamp(16px,4vw,52px);flex-wrap:wrap;
 }
 .svc-header-left .eyebrow{font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rd);font-weight:700;margin-bottom:8px;font-family:'IBM Plex Mono',monospace}
 .svc-header-left .eyebrow::before{content:'// '}
 .svc-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);font-weight:400;line-height:.9;letter-spacing:.03em;text-transform:uppercase}
 .svc-h2 em{font-style:normal;color:var(--rd);text-shadow:0 0 9px rgba(232,25,44,.22);animation:purpleFlicker 8s ease-in-out infinite}
-.svc-header-right{font-size:.88rem;color:rgb(242, 240, 255);max-width:220px;line-height:1.8;font-family:'IBM Plex Mono',monospace;align-self:flex-end;padding-bottom:8px}
-/* drag scroll */
-.svc-scroll-wrap{overflow:hidden;position:relative;}
-.svc-track{display:flex;gap:0;transition:transform .55s cubic-bezier(.4,0,.2,1);will-change:transform;}
-.svc-card{
-  flex:0 0 100%;height:460px;
-  position:relative;overflow:hidden;
-  border:1px solid rgba(232,25,44,.1);
-  cursor:pointer;-webkit-tap-highlight-color:transparent;
-  transition:border-color .3s,box-shadow .3s;
-}
-@media(min-width:760px){.svc-card{flex:0 0 340px;height:480px}}
-.svc-card:hover{border-color:rgba(232,25,44,.45);box-shadow:0 0 28px rgba(232,25,44,.12)}
-.svc-card img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .65s cubic-bezier(.4,0,.2,1);filter:saturate(.72)}
-.svc-card:hover img{transform:scale(1.06);filter:saturate(.95)}
-.svc-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,10,.97) 0%,rgba(6,6,10,.25) 55%,transparent 100%)}
-.svc-body{position:absolute;bottom:0;left:0;right:0;padding:22px 20px}
-.svc-num{font-size:.46rem;letter-spacing:.32em;color:var(--rd);margin-bottom:5px;font-weight:700;font-family:'IBM Plex Mono',monospace;text-shadow:0 0 8px rgba(232,25,44,.5)}
-.svc-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.7rem,3.5vw,2.2rem);color:var(--chalk);line-height:1.05;letter-spacing:.04em;text-transform:uppercase}
-.svc-price{font-size:.62rem;color:var(--rd-lt);margin-top:3px;font-family:'IBM Plex Mono',monospace}
-.svc-book-btn{display:inline-flex;align-items:center;gap:5px;margin-top:14px;padding:8px 18px;font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;background:var(--rd);color:var(--ink);border:none;cursor:pointer;transition:all .25s;-webkit-tap-highlight-color:transparent;font-family:'IBM Plex Mono',monospace;box-shadow:0 0 14px rgba(232,25,44,.3)}
-.svc-book-btn:hover{background:var(--rd-lt);box-shadow:0 0 22px rgba(232,25,44,.5)}
-/* service nav arrows + dots — mobile/tablet only */
-.svc-nav{
-  display:flex;align-items:center;gap:12px;margin-top:18px;padding-left:var(--pad);
-}
-/* svc-nav visible on all screen sizes */
-.svc-arr{
-  width:40px;height:40px;
-  border:1px solid rgba(232,25,44,.3);
-  background:transparent;color:var(--chalk);
-  font-size:1rem;display:flex;align-items:center;justify-content:center;
-  cursor:pointer;transition:all .22s;-webkit-tap-highlight-color:transparent;
-  font-family:'IBM Plex Mono',monospace;flex-shrink:0;
-}
-.svc-arr:hover,.svc-arr:active{background:var(--rd);border-color:var(--rd);color:var(--ink);box-shadow:0 0 16px rgba(232,25,44,.45)}
-.svc-arr:disabled{opacity:.25;pointer-events:none}
-.svc-nav-dots{display:flex;gap:6px;align-items:center;margin-left:4px}
-.svc-nav-dot{
-  width:6px;height:6px;background:rgba(232,25,44,.2);
-  transition:all .3s;cursor:pointer;border-radius:0;
-}
-.svc-nav-dot.active{background:var(--rd);width:20px;box-shadow:0 0 6px rgba(232,25,44,.5)}
+.svc-header-right{font-size:.88rem;color:rgb(242,240,255);max-width:220px;line-height:1.8;font-family:'IBM Plex Mono',monospace;align-self:flex-end;padding-bottom:8px}
 
-/* hide drag hint on mobile since arrows replace it */
-@media(max-width:1023px){.svc-drag-hint{display:none}}
-.svc-drag-hint::before{content:'←→';font-size:.88rem;color:var(--rd);opacity:.5}
+/* ── carousel viewport ── */
+.svc-viewport{overflow:hidden;position:relative;}
+.svc-track{display:flex;gap:14px;transition:transform .55s cubic-bezier(.4,0,.2,1);}
+.svc-slide{flex:0 0 calc(100% - 14px);position:relative;height:460px;overflow:hidden;border:1px solid rgba(232,25,44,.1);transition:border-color .3s;}
+@media(min-width:600px){.svc-slide{flex:0 0 calc(75% - 14px);}}
+@media(min-width:900px){.svc-slide{flex:0 0 340px;height:480px;}}
+.svc-slide img{width:100%;height:100%;object-fit:cover;object-position:top;filter:saturate(.72);}
+.svc-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,10,.97) 0%,rgba(6,6,10,.25) 55%,transparent 100%);}
+.svc-body{position:absolute;bottom:0;left:0;right:0;padding:22px 20px;}
+.svc-num{font-size:.46rem;letter-spacing:.32em;color:var(--rd);margin-bottom:5px;font-weight:700;font-family:'IBM Plex Mono',monospace;}
+.svc-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.7rem,3.5vw,2.2rem);color:var(--chalk);line-height:1.05;letter-spacing:.04em;text-transform:uppercase;}
+.svc-price{font-size:.62rem;color:var(--rd-lt);margin-top:3px;font-family:'IBM Plex Mono',monospace;}
+.svc-book-btn{display:inline-flex;align-items:center;gap:5px;margin-top:14px;padding:8px 18px;font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;background:var(--rd);color:var(--ink);border:none;cursor:pointer;transition:all .25s;font-family:'IBM Plex Mono',monospace;box-shadow:0 0 14px rgba(232,25,44,.3);}
+.svc-book-btn:hover{background:var(--rd-lt);}
+
+/* ── arrows + dots ── */
+.svc-controls{display:flex;align-items:center;gap:12px;margin-top:18px;}
+.svc-btn{width:40px;height:40px;border:1px solid rgba(232,25,44,.3);background:transparent;color:var(--chalk);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .22s;-webkit-tap-highlight-color:transparent;flex-shrink:0;}
+.svc-btn:hover,.svc-btn:active{background:var(--rd);border-color:var(--rd);color:var(--ink);}
+.svc-btn:disabled{opacity:.3;pointer-events:none;}
+.svc-dots{display:flex;gap:6px;align-items:center;margin-left:4px;}
+.svc-dot{width:6px;height:6px;background:rgba(232,25,44,.2);cursor:pointer;transition:all .3s;}
+.svc-dot.active{background:var(--rd);width:20px;box-shadow:0 0 6px rgba(232,25,44,.5);}
 
 /* ═══════════════════════════════════════
    WAITLIST — BIG BANNER
@@ -605,9 +583,17 @@ nav.solid{background:rgba(6,6,10,.99)}
 .star-field{
   position:absolute;inset:0;z-index:0;pointer-events:none;
 }
-.testimonials > *:not(.star-field){
-  position:relative;z-index:1;
-}
+.testimonials > *:not(.star-field){position:relative;z-index:1;}
+.hero > *:not(.star-field){position:relative;z-index:1;}
+.about > *:not(.star-field){position:relative;z-index:1;}
+.new-clients > *:not(.star-field){position:relative;z-index:1;}
+.services > *:not(.star-field){position:relative;z-index:1;}
+.wl-strip > *:not(.star-field){position:relative;z-index:1;}
+.specials > *:not(.star-field){position:relative;z-index:1;}
+.gallery > *:not(.star-field){position:relative;z-index:1;}
+.faq-section > *:not(.star-field){position:relative;z-index:1;}
+.contact > *:not(.star-field){position:relative;z-index:1;}
+.policies > *:not(.star-field){position:relative;z-index:1;}
 .star{
   position:absolute;
   width:3px;height:3px;
@@ -1454,6 +1440,16 @@ footer{
 
 <!-- ═══ HERO — SPLIT SCREEN ═══ -->
 <section class="hero">
+  <div class="star-field">
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span>
+  </div>
+
   <!-- LEFT: text -->
   <div class="hero-left">
     <div class="hero-eyebrow"><span class="badge-dot"></span>Premium Barbershop</div>
@@ -1498,6 +1494,16 @@ footer{
 
 <!-- ═══ ABOUT ME ═══ -->
 <section class="about" id="about">
+  <div class="star-field">
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span>
+  </div>
+
   <div class="about-inner">
 
     <!-- LEFT: photo -->
@@ -1556,6 +1562,16 @@ footer{
 
 <!-- ═══ NEW CLIENTS ═══ -->
 <section class="new-clients" id="new-clients">
+  <div class="star-field">
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span>
+  </div>
+
   <div class="nc-inner">
 
     <div class="nc-header">
@@ -1636,8 +1652,18 @@ footer{
   </div>
 </section>
 
-<!-- ═══ SERVICES — HORIZONTAL SCROLL ═══ -->
+<!-- ═══ SERVICES CAROUSEL ═══ -->
 <section class="services" id="services">
+  <div class="star-field">
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span>
+  </div>
+
   <div class="svc-header">
     <div class="svc-header-left">
       <div class="eyebrow">Our Services</div>
@@ -1645,9 +1671,10 @@ footer{
     </div>
     <p class="svc-header-right">Each service is tailored to your hair type and the look you're going for. No cookie-cutter cuts here — just precision craft.</p>
   </div>
-  <div class="svc-scroll-wrap" id="svcScrollWrap">
+
+  <div class="svc-viewport" id="svcViewport">
     <div class="svc-track" id="svcTrack">
-      <div class="svc-card" id="svcCard1">
+      <div class="svc-slide">
         <img src="client18.png" alt="Skin Fade">
         <div class="svc-veil"></div>
         <div class="svc-body">
@@ -1657,7 +1684,7 @@ footer{
           <button class="svc-book-btn" id="svcBtn1">Book This</button>
         </div>
       </div>
-      <div class="svc-card" id="svcCard2">
+      <div class="svc-slide">
         <img src="client19.png" alt="Taper Fade">
         <div class="svc-veil"></div>
         <div class="svc-body">
@@ -1667,7 +1694,7 @@ footer{
           <button class="svc-book-btn" id="svcBtn2">Book This</button>
         </div>
       </div>
-      <div class="svc-card" id="svcCard3">
+      <div class="svc-slide">
         <img src="client16.png" alt="Bald Fade">
         <div class="svc-veil"></div>
         <div class="svc-body">
@@ -1677,7 +1704,7 @@ footer{
           <button class="svc-book-btn" id="svcBtn3">Book This</button>
         </div>
       </div>
-      <div class="svc-card" id="svcCard4">
+      <div class="svc-slide">
         <img src="client15.png" alt="Lineup + Beard">
         <div class="svc-veil"></div>
         <div class="svc-body">
@@ -1689,17 +1716,26 @@ footer{
       </div>
     </div>
   </div>
-  <div class="svc-drag-hint">Drag to explore all services</div>
-  <!-- Mobile / tablet arrow nav -->
-  <div class="svc-nav">
-    <button class="svc-arr" id="svcPrev" aria-label="Previous service">&#8592;</button>
-    <button class="svc-arr" id="svcNext" aria-label="Next service">&#8594;</button>
-    <div class="svc-nav-dots" id="svcDots"></div>
+
+  <div class="svc-controls">
+    <button class="svc-btn" onclick="svcGoTo(svcCur-1)">&#8592;</button>
+    <button class="svc-btn" onclick="svcGoTo(svcCur+1)">&#8594;</button>
+    <div class="svc-dots" id="svcDots"></div>
   </div>
 </section>
 
 <!-- ═══ WAITLIST — BIG BANNER ═══ -->
 <div class="wl-strip" id="waitlist">
+  <div class="star-field">
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span>
+  </div>
+
   <!-- LEFT: heading + copy -->
   <div class="wl-strip-left">
     <div class="wl-strip-eyebrow">Limited Availability</div>
@@ -1738,6 +1774,16 @@ footer{
 
 <!-- ═══ SPECIALS — EDITORIAL ROWS ═══ -->
 <section class="specials" id="specials">
+  <div class="star-field">
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span>
+  </div>
+
   <div class="specials-header">
     <div class="eyebrow">Current Offers</div>
     <h2 class="specials-h2">This Month's<br><em>Specials</em></h2>
@@ -1787,6 +1833,16 @@ footer{
 
 <!-- ═══ GALLERY ═══ -->
 <section class="gallery" id="gallery">
+  <div class="star-field">
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span>
+  </div>
+
   <div class="gal-inner">
     <div class="gal-panel">
       <div class="eyebrow">Our Work</div>
@@ -1906,6 +1962,16 @@ footer{
 
 <!-- ═══ FAQ — 2 COLUMN ═══ -->
 <section class="faq-section" id="faq">
+  <div class="star-field">
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span>
+  </div>
+
   <div class="faq-inner">
     <div class="faq-top">
       <div class="eyebrow">Got Questions?</div>
@@ -1948,6 +2014,16 @@ footer{
 
 <!-- ═══ CONTACT — SPLIT BG ═══ -->
 <section class="contact" id="contact">
+  <div class="star-field">
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span>
+  </div>
+
   <!-- DARK SIDE: info -->
   <div class="contact-dark">
     <div class="contact-dark-overlay"></div>
@@ -1974,6 +2050,16 @@ footer{
 
 <!-- ═══ POLICIES ═══ -->
 <section class="policies" id="policies">
+  <div class="star-field">
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span><span class="star"></span>
+    <span class="star"></span><span class="star"></span>
+  </div>
+
   <div class="pol-bg"></div>
   <div class="pol-overlay"></div>
   <div class="pol-rule"></div>
@@ -2383,7 +2469,8 @@ document.addEventListener('keydown', function(e){
 
 
 /* ── WAITLIST BANNER INLINE SUBMIT ── */
-document.getElementById('wlTrigger').addEventListener('click', function(){
+var wlTriggerEl = document.getElementById('wlTrigger');
+if(wlTriggerEl) wlTriggerEl.addEventListener('click', function(){
   var name = document.getElementById('wlBannerName').value.trim();
   var em = document.getElementById('wlBannerEmail').value.trim();
   var phone = document.getElementById('wlBannerPhone').value.trim();
@@ -2399,71 +2486,42 @@ document.getElementById('wlTrigger').addEventListener('click', function(){
 });
 
 /* ── SERVICES CAROUSEL ── */
-var svcWrap  = document.getElementById('svcScrollWrap');
 var svcTrack = document.getElementById('svcTrack');
-var svcCards = Array.from(svcTrack.querySelectorAll('.svc-card'));
+var svcSlides = Array.from(svcTrack.querySelectorAll('.svc-slide'));
 var svcDotsEl = document.getElementById('svcDots');
 var svcCur = 0;
+var svcTotal = svcSlides.length;
 var svcAutoTimer = null;
 
-// Build dots
-svcCards.forEach(function(_, i){
+svcSlides.forEach(function(_, i){
   var d = document.createElement('span');
-  d.className = 'svc-nav-dot' + (i === 0 ? ' active' : '');
-  d.addEventListener('click', function(){ svcGoTo(i); svcResetAuto(); });
+  d.className = 'svc-dot' + (i===0?' active':'');
+  d.addEventListener('click', function(){ svcGoTo(i); });
   svcDotsEl.appendChild(d);
 });
 
-function svcUpdateUI(){
-  svcDotsEl.querySelectorAll('.svc-nav-dot').forEach(function(d, i){
+function svcGoTo(n){
+  svcCur = (n + svcTotal) % svcTotal;
+  var slideW = svcSlides[0].offsetWidth + 14;
+  svcTrack.style.transform = 'translateX(-' + (svcCur * slideW) + 'px)';
+  svcDotsEl.querySelectorAll('.svc-dot').forEach(function(d,i){
     d.classList.toggle('active', i === svcCur);
   });
-  document.getElementById('svcPrev').disabled = svcCur === 0;
-  document.getElementById('svcNext').disabled = svcCur === svcCards.length - 1;
-}
-
-function svcGoTo(n){
-  svcCur = Math.max(0, Math.min(n, svcCards.length - 1));
-  var cardW = svcWrap.offsetWidth;
-  svcTrack.style.transform = 'translateX(-' + (svcCur * cardW) + 'px)';
-  svcUpdateUI();
 }
 
 function svcStartAuto(){
-  svcStopAuto();
-  svcAutoTimer = setInterval(function(){
-    svcGoTo(svcCur >= svcCards.length - 1 ? 0 : svcCur + 1);
-  }, 4000);
+  clearInterval(svcAutoTimer);
+  svcAutoTimer = setInterval(function(){ svcGoTo(svcCur + 1); }, 4000);
 }
-function svcStopAuto(){ clearInterval(svcAutoTimer); }
-function svcResetAuto(){ svcStopAuto(); setTimeout(svcStartAuto, 3000); }
 
-document.getElementById('svcPrev').addEventListener('click', function(){ svcGoTo(svcCur - 1); svcResetAuto(); });
-document.getElementById('svcNext').addEventListener('click', function(){ svcGoTo(svcCur + 1); svcResetAuto(); });
-
-function svcSetSizes(){
-  var w = svcWrap.offsetWidth;
-  svcCards.forEach(function(c){ c.style.width = w + 'px'; c.style.flexShrink = '0'; });
-}
-svcSetSizes();
 svcStartAuto();
-window.addEventListener('resize', function(){ svcSetSizes(); svcGoTo(0); });
 
-// Touch swipe
-var svcTouchX = 0;
-svcWrap.addEventListener('touchstart', function(e){ svcTouchX = e.touches[0].clientX; svcStopAuto(); }, {passive:true});
-svcWrap.addEventListener('touchend', function(e){
-  var dx = svcTouchX - e.changedTouches[0].clientX;
-  if(Math.abs(dx) > 40){ svcGoTo(dx > 0 ? svcCur + 1 : svcCur - 1); }
-  svcResetAuto();
-}, {passive:true});
-
-// Mouse wheel (desktop)
-svcWrap.addEventListener('wheel', function(e){
-  e.preventDefault();
-  svcGoTo(svcCur + (e.deltaY > 0 ? 1 : -1));
-  svcResetAuto();
-}, {passive:false});
+var svcTouchStart = 0;
+svcTrack.addEventListener('touchstart', function(e){ svcTouchStart = e.touches[0].clientX; }, {passive:true});
+svcTrack.addEventListener('touchend', function(e){
+  var dx = svcTouchStart - e.changedTouches[0].clientX;
+  if(Math.abs(dx) > 40){ svcGoTo(dx > 0 ? svcCur + 1 : svcCur - 1); svcStartAuto(); }
+});
 
 /* ── SMOOTH SCROLL — requestAnimationFrame lerp ── */
 function smoothScrollTo(target, duration){
