@@ -1328,6 +1328,9 @@ footer{
   :root{--pad:clamp(80px,8vw,140px)}
   body{max-width:1800px;margin:0 auto}
 }
+/* ── SCROLL FADE-IN ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 1.4s ease,transform 1.4s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
 </style>
 </head>
 <body>
@@ -1504,10 +1507,10 @@ footer{
     <span class="star"></span><span class="star"></span>
   </div>
 
-  <div class="about-inner">
+  <div class="about-inner reveal">
 
     <!-- LEFT: photo -->
-    <div class="about-img-wrap">
+    <div class="about-img-wrap reveal">
       <div class="about-img-frame">
         <img src="about-2.png" alt="KCutyyy barber" style="object-position:center top">
       </div>
@@ -1574,7 +1577,7 @@ footer{
 
   <div class="nc-inner">
 
-    <div class="nc-header">
+    <div class="nc-header reveal">
       <div>
         <div class="nc-eyebrow">First Visit?</div>
         <h2 class="nc-h2">Welcome,<br><em>New Client</em></h2>
@@ -1585,7 +1588,7 @@ footer{
     <div class="nc-body">
 
       <!-- LEFT: prep steps -->
-      <div class="nc-steps">
+      <div class="nc-steps reveal">
 
         <div class="nc-step">
           <div class="nc-step-num">01</div>
@@ -1664,7 +1667,7 @@ footer{
     <span class="star"></span><span class="star"></span>
   </div>
 
-  <div class="svc-header">
+  <div class="svc-header reveal">
     <div class="svc-header-left">
       <div class="eyebrow">Our Services</div>
       <h2 class="svc-h2">What We<br><em>Offer</em></h2>
@@ -1717,7 +1720,7 @@ footer{
     </div>
   </div>
 
-  <div class="svc-controls">
+  <div class="svc-controls reveal">
     <button class="svc-btn" onclick="svcGoTo(svcCur-1)">&#8592;</button>
     <button class="svc-btn" onclick="svcGoTo(svcCur+1)">&#8594;</button>
     <div class="svc-dots" id="svcDots"></div>
@@ -1737,13 +1740,13 @@ footer{
   </div>
 
   <!-- LEFT: heading + copy -->
-  <div class="wl-strip-left">
+  <div class="wl-strip-left reveal">
     <div class="wl-strip-eyebrow">Limited Availability</div>
     <h2 class="wl-strip-h2">Can't Find<br>A <em>Spot?</em></h2>
     <p>We book up fast — but cancellations happen. Drop your info and we'll reach out the <strong>moment a slot opens up.</strong> No spam, ever.</p>
   </div>
   <!-- RIGHT: how the waitlist works -->
-  <div class="wl-strip-right">
+  <div class="wl-strip-right reveal">
     <div class="wl-how-title">HOW IT WORKS</div>
     <div class="wl-steps">
       <div class="wl-step">
@@ -1784,11 +1787,11 @@ footer{
     <span class="star"></span><span class="star"></span>
   </div>
 
-  <div class="specials-header">
+  <div class="specials-header reveal">
     <div class="eyebrow">Current Offers</div>
     <h2 class="specials-h2">This Month's<br><em>Specials</em></h2>
   </div>
-  <div class="deal-row">
+  <div class="deal-row reveal">
     <div class="deal-item">
       <div class="deal-item-num">01</div>
       <div class="deal-item-body">
@@ -1844,7 +1847,7 @@ footer{
   </div>
 
   <div class="gal-inner">
-    <div class="gal-panel">
+    <div class="gal-panel reveal">
       <div class="eyebrow">Our Work</div>
       <h2 class="gal-h2">The<br><em>Gallery</em></h2>
       <p class="gal-sub">Every cut is a work of art. Browse our portfolio and see the transformations for yourself — clean fades, sharp edges, precision work every time.</p>
@@ -1855,7 +1858,7 @@ footer{
       </div>
       <div class="gal-dots" id="galDots"></div>
     </div>
-    <div class="gal-slideshow">
+    <div class="gal-slideshow reveal">
       <div class="gal-track-wrap">
         <div class="gal-track" id="galTrack">
           <div class="gal-slide active-slide" data-src="client10.png"><img src="client10.png" alt="Gallery 1" loading="lazy"><div class="gal-slide-veil"><span class="gal-slide-num">01</span></div><div class="gal-slide-overlay"><button class="gal-expand" onclick="openLb(0)">View Photo</button></div></div>
@@ -1888,7 +1891,7 @@ footer{
 
 <!-- ═══ CTA BAND ═══ -->
 <div class="cta-band">
-  <div class="cta-band-content">
+  <div class="cta-band-content reveal">
     <h2>Ready To Look<br><span>Absolutely Sharp?</span></h2>
     <p>Secure your appointment today and experience precision cuts, clean fades, and sharp edges.</p>
   </div>
@@ -1912,7 +1915,7 @@ footer{
     <div class="shooting-star shooting-star-1"></div>
     <div class="shooting-star shooting-star-2"></div>
   </div>
-  <div class="test-header">
+  <div class="test-header reveal">
     <div class="eyebrow">Client Love</div>
     <h2 class="test-h2">What They<br><em>Say</em></h2>
   </div>
@@ -1973,11 +1976,11 @@ footer{
   </div>
 
   <div class="faq-inner">
-    <div class="faq-top">
+    <div class="faq-top reveal">
       <div class="eyebrow">Got Questions?</div>
       <h2 class="faq-h2">Frequently<br><em>Asked</em></h2>
     </div>
-    <div class="faq-grid">
+    <div class="faq-grid reveal">
       <!-- Column 1 -->
       <div class="faq-list">
         <div class="faq-item">
@@ -2039,7 +2042,7 @@ footer{
   <!-- LIGHT SIDE: form -->
   <div class="contact-light">
     <div class="eyebrow">Send a Message</div>
-    <div class="contact-form">
+    <div class="contact-form reveal">
       <div class="field"><label>Your Name</label><input type="text" placeholder="e.g. Marcus Smith" autocomplete="name"></div>
       <div class="field"><label>Email</label><input type="email" placeholder="you@email.com" autocomplete="email"></div>
       <div class="field"><label>Your Question</label><textarea placeholder="What would you like to know?" style="min-height:130px"></textarea></div>
@@ -2570,6 +2573,16 @@ if(window.matchMedia('(pointer:fine)').matches){
 }
 
 }catch(e){ console.warn('JS:',e); }
+</script>
+
+<!-- Scroll fade-in -->
+<script>
+(function(){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
 </script>
 
 <!-- Isolated loader dismiss -->
