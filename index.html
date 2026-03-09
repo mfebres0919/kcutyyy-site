@@ -113,7 +113,7 @@ body::after{
 .promo-banner.hidden{
   max-height:0;opacity:0;pointer-events:none;padding-top:0;padding-bottom:0;
 }
-.promo-text{font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--ink);text-align:center;line-height:1.6;font-family:'IBM Plex Mono',monospace}
+.promo-text{font-size:.9rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--ink);text-align:center;line-height:1.6;font-family:'IBM Plex Mono',monospace}
 .promo-text strong{background:rgba(0,0,0,.15);padding:1px 8px;margin:0 2px}
 .promo-cta{font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--rd);background:var(--ink);padding:4px 12px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:background .2s;font-family:'IBM Plex Mono',monospace}
 .promo-cta:hover{background:var(--ink2)}
@@ -131,7 +131,7 @@ nav{
   background:rgba(6,6,10,.92);
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   border-bottom:1px solid rgba(232,25,44,.15);
-  transition:background .4s,top .4s;
+  transition:background .4s,top .35s ease;
 }
 nav.solid{background:rgba(6,6,10,.99)}
 .nav-left{display:none;list-style:none;gap:clamp(20px,3vw,44px);align-items:center;justify-content:flex-end}
@@ -172,7 +172,7 @@ nav.solid{background:rgba(6,6,10,.99)}
 .btn{
   display:inline-flex;align-items:center;gap:8px;
   padding:12px 28px;
-  font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;
+  font-size:.9rem;letter-spacing:.22em;text-transform:uppercase;
   font-weight:700;transition:all .2s;white-space:nowrap;cursor:pointer;border:none;
   font-family:'IBM Plex Mono',monospace;
 }
@@ -243,7 +243,7 @@ nav.solid{background:rgba(6,6,10,.99)}
 .hero h1 .line2{color:var(--rd);text-shadow:0 0 10px rgba(232,25,44,.25);display:block;animation:purpleFlickerBig 9s ease-in-out infinite}
 
 .hero-sub{
-  font-size:clamp(.68rem,1.6vw,.78rem);line-height:1.9;
+  font-size:clamp(.85rem,1.8vw,.95rem);line-height:1.9;
   color:rgba(242,240,255,.72);max-width:360px;margin-bottom:28px;
   font-family:'IBM Plex Mono',monospace;
 }
@@ -312,7 +312,7 @@ nav.solid{background:rgba(6,6,10,.99)}
 .svc-header-left .eyebrow::before{content:'// '}
 .svc-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6rem);font-weight:400;line-height:.9;letter-spacing:.03em;text-transform:uppercase}
 .svc-h2 em{font-style:normal;color:var(--rd);text-shadow:0 0 9px rgba(232,25,44,.22);animation:purpleFlicker 8s ease-in-out infinite}
-.svc-header-right{font-size:.7rem;color:rgb(242, 240, 255);max-width:220px;line-height:1.8;font-family:'IBM Plex Mono',monospace;align-self:flex-end;padding-bottom:8px}
+.svc-header-right{font-size:.88rem;color:rgb(242, 240, 255);max-width:220px;line-height:1.8;font-family:'IBM Plex Mono',monospace;align-self:flex-end;padding-bottom:8px}
 /* drag scroll */
 .svc-scroll-wrap{overflow-x:auto;overflow-y:hidden;cursor:grab;-webkit-overflow-scrolling:touch;padding-bottom:4px;touch-action:pan-x;scroll-snap-type:x mandatory;}
 .svc-card{scroll-snap-align:start;}
@@ -363,7 +363,7 @@ nav.solid{background:rgba(6,6,10,.99)}
 
 /* hide drag hint on mobile since arrows replace it */
 @media(max-width:1023px){.svc-drag-hint{display:none}}
-.svc-drag-hint::before{content:'←→';font-size:.7rem;color:var(--rd);opacity:.5}
+.svc-drag-hint::before{content:'←→';font-size:.88rem;color:var(--rd);opacity:.5}
 
 /* ═══════════════════════════════════════
    WAITLIST — BIG BANNER
@@ -406,7 +406,7 @@ nav.solid{background:rgba(6,6,10,.99)}
   margin-bottom:14px;
 }
 .wl-strip-h2 em{font-style:normal;color:var(--rd);text-shadow:0 0 9px rgba(232,25,44,.22);animation:purpleFlickerBig 11s ease-in-out infinite}
-.wl-strip p{font-size:.72rem;color:rgba(242,240,255,1);line-height:1.85;font-family:'IBM Plex Mono',monospace;max-width:380px}
+.wl-strip p{font-size:.9rem;color:rgba(242,240,255,1);line-height:1.85;font-family:'IBM Plex Mono',monospace;max-width:380px}
 .wl-strip p strong{color:var(--rd-lt)}
 .wl-strip-right{
   position:relative;z-index:1;
@@ -417,14 +417,14 @@ nav.solid{background:rgba(6,6,10,.99)}
 .wl-strip-input{
   width:100%;background:rgba(232,25,44,.05);
   border:1px solid rgba(232,25,44,.25);padding:13px 16px;
-  color:var(--chalk);font-family:'IBM Plex Mono',monospace;font-size:.74rem;
+  color:var(--chalk);font-family:'IBM Plex Mono',monospace;font-size:.9rem;
   outline:none;transition:border-color .25s;border-radius:0;
 }
 .wl-strip-input::placeholder{color:rgba(242,240,255,1)}
 .wl-strip-input:focus{border-color:var(--rd);box-shadow:0 0 12px rgba(232,25,44,.15)}
 .wl-strip-btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding:14px 28px;font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;
+  padding:14px 28px;font-size:.9rem;letter-spacing:.22em;text-transform:uppercase;
   font-weight:700;background:var(--rd);color:var(--ink);border:none;cursor:pointer;
   transition:all .25s;font-family:'IBM Plex Mono',monospace;
   box-shadow:0 0 24px rgba(232,25,44,.4);
@@ -434,9 +434,9 @@ nav.solid{background:rgba(6,6,10,.99)}
 .wl-steps{display:flex;flex-direction:column;gap:18px;margin-bottom:24px}
 .wl-step{display:flex;gap:16px;align-items:flex-start}
 .wl-step-num{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--rd);opacity:.7;line-height:1;min-width:28px}
-.wl-step strong{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--chalk);display:block;margin-bottom:4px}
-.wl-step p{font-size:.65rem;color:rgba(242,240,255,1);line-height:1.75;font-family:'IBM Plex Mono',monospace;margin:0}
-.wl-strip-note{font-size:.52rem;color:rgba(242,240,255,1);font-family:'IBM Plex Mono',monospace;line-height:1.6}
+.wl-step strong{font-family:'IBM Plex Mono',monospace;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--chalk);display:block;margin-bottom:4px}
+.wl-step p{font-size:.82rem;color:rgba(242,240,255,1);line-height:1.75;font-family:'IBM Plex Mono',monospace;margin:0}
+.wl-strip-note{font-size:.9rem;color:rgba(242,240,255,1);font-family:'IBM Plex Mono',monospace;line-height:1.6}
 
 /* ═══════════════════════════════════════
    SPECIALS — EDITORIAL ROW LAYOUT
@@ -485,12 +485,12 @@ nav.solid{background:rgba(6,6,10,.99)}
 .deal-item-body{flex:1}
 .deal-item-tag{font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rd);font-weight:700;margin-bottom:6px;font-family:'IBM Plex Mono',monospace}
 .deal-item-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,4vw,2.5rem);color:var(--chalk);line-height:1;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
-.deal-item-desc{font-size:.68rem;color:rgb(242, 240, 255);line-height:1.75;max-width:480px;font-family:'IBM Plex Mono',monospace}
+.deal-item-desc{font-size:.84rem;color:rgb(242, 240, 255);line-height:1.75;max-width:480px;font-family:'IBM Plex Mono',monospace}
 .deal-item-right{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
 @media(min-width:600px){.deal-item-right{align-items:flex-end}}
 .deal-price-row{display:flex;align-items:baseline;gap:8px}
 .deal-new{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--rd);letter-spacing:.05em;text-shadow:0 0 7px rgba(232,25,44,.2);animation:purpleFlicker 6s ease-in-out infinite}
-.deal-old{font-size:.68rem;color:rgba(242,240,255,1);text-decoration:line-through;font-family:'IBM Plex Mono',monospace}
+.deal-old{font-size:.84rem;color:rgba(242,240,255,1);text-decoration:line-through;font-family:'IBM Plex Mono',monospace}
 .deal-expires{font-size:.48rem;letter-spacing:.16em;color:rgb(242, 240, 255);text-transform:uppercase;font-family:'IBM Plex Mono',monospace}
 
 /* ═══════════════════════════════════════
@@ -518,7 +518,7 @@ nav.solid{background:rgba(6,6,10,.99)}
 .gal-panel .eyebrow::before{content:'// '}
 .gal-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,5.5rem);font-weight:400;line-height:.9;letter-spacing:.03em;text-transform:uppercase;margin-bottom:18px}
 .gal-h2 em{font-style:normal;color:var(--rd);text-shadow:0 0 9px rgba(232,25,44,.22);animation:purpleFlickerBig 13s ease-in-out infinite}
-.gal-sub{font-size:.7rem;color:rgba(242,240,255,1);line-height:1.85;font-family:'IBM Plex Mono',monospace;margin-bottom:28px;max-width:260px}
+.gal-sub{font-size:.88rem;color:rgba(242,240,255,1);line-height:1.85;font-family:'IBM Plex Mono',monospace;margin-bottom:28px;max-width:260px}
 .gal-counter{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.12em;color:rgba(242,240,255,1);margin-bottom:16px;}
 .gal-counter em{font-style:normal;color:var(--rd);font-size:1.4rem}
 .gal-nav{display:flex;gap:10px;}
@@ -570,7 +570,7 @@ nav.solid{background:rgba(6,6,10,.99)}
 .cta-band-content{position:relative;z-index:1}
 .cta-band h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,7vw,5rem);color:var(--ink);line-height:.9;letter-spacing:.04em;text-transform:uppercase}
 .cta-band h2 span{display:block;opacity:.55}
-.cta-band p{font-size:.7rem;color:rgba(6,6,10,.62);line-height:1.8;margin-top:8px;font-family:'IBM Plex Mono',monospace;max-width:320px}
+.cta-band p{font-size:.88rem;color:rgba(6,6,10,.62);line-height:1.8;margin-top:8px;font-family:'IBM Plex Mono',monospace;max-width:320px}
 .cta-band-btn{flex-shrink:0;position:relative;z-index:1}
 
 
@@ -688,7 +688,7 @@ nav.solid{background:rgba(6,6,10,.99)}
   position:relative;
 }
 @media(min-width:760px){.t-card{flex:0 0 calc(50% - 7px)}}
-.t-stars{color:var(--rd);font-size:.7rem;letter-spacing:4px;margin-bottom:16px;text-shadow:0 0 8px rgba(232,25,44,.3)}
+.t-stars{color:var(--rd);font-size:.88rem;letter-spacing:4px;margin-bottom:16px;text-shadow:0 0 8px rgba(232,25,44,.3)}
 .t-text{
   font-family:'Bebas Neue',sans-serif;
   font-size:clamp(1.4rem,3.5vw,2.2rem);
@@ -712,7 +712,7 @@ nav.solid{background:rgba(6,6,10,.99)}
 .reviews-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:36px;padding-top:24px;border-top:1px solid rgba(232,25,44,.08)}
 .g-row{display:flex;align-items:center;gap:11px}
 .g-logo{width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;font-family:serif;color:var(--chalk);flex-shrink:0;background:linear-gradient(135deg,#4285F4 0%,#34A853 40%,#FBBC05 70%,#EA4335 100%)}
-.g-stars{color:#FBBC05;font-size:.75rem;letter-spacing:2px}
+.g-stars{color:#FBBC05;font-size:.92rem;letter-spacing:2px}
 .g-label{font-size:.5rem;color:rgb(255, 255, 255);letter-spacing:.12em;text-transform:uppercase;margin-top:2px;font-family:'IBM Plex Mono',monospace}
 .review-links{display:flex;gap:8px;flex-wrap:wrap}
 .rev-btn{display:inline-flex;align-items:center;gap:5px;padding:8px 14px;font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;transition:all .25s;cursor:pointer;font-family:'IBM Plex Mono',monospace;text-decoration:none;border:none}
@@ -754,13 +754,13 @@ nav.solid{background:rgba(6,6,10,.99)}
   display:flex;align-items:center;justify-content:space-between;gap:14px;
   padding:17px 0;cursor:pointer;-webkit-tap-highlight-color:transparent;
 }
-.faq-q-text{font-family:'IBM Plex Mono',monospace;font-size:clamp(.76rem,2vw,.88rem);font-weight:700;color:var(--chalk);line-height:1.4;transition:color .25s}
+.faq-q-text{font-family:'IBM Plex Mono',monospace;font-size:clamp(.88rem,2vw,1rem);font-weight:700;color:var(--chalk);line-height:1.4;transition:color .25s}
 .faq-q:hover .faq-q-text{color:var(--rd-lt)}
-.faq-icon{width:24px;height:24px;flex-shrink:0;border:1px solid rgba(232,25,44,.25);display:flex;align-items:center;justify-content:center;font-size:.68rem;color:var(--rd);transition:transform .35s,background .25s,border-color .25s}
+.faq-icon{width:24px;height:24px;flex-shrink:0;border:1px solid rgba(232,25,44,.25);display:flex;align-items:center;justify-content:center;font-size:.84rem;color:var(--rd);transition:transform .35s,background .25s,border-color .25s}
 .faq-item.open .faq-icon{transform:rotate(45deg);background:rgba(232,25,44,.1);border-color:var(--rd)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1),padding .4s}
 .faq-item.open .faq-a{max-height:260px;padding-bottom:16px}
-.faq-a p{font-size:.7rem;line-height:1.85;color:rgb(255, 255, 255);padding-right:34px;font-family:'IBM Plex Mono',monospace}
+.faq-a p{font-size:.88rem;line-height:1.85;color:rgb(255, 255, 255);padding-right:34px;font-family:'IBM Plex Mono',monospace}
 
 /* ═══════════════════════════════════════
    CONTACT — FULL WIDTH SPLIT BG
@@ -801,10 +801,10 @@ nav.solid{background:rgba(6,6,10,.99)}
 .contact-dark .eyebrow::before{content:'// '}
 .contact-h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:400;line-height:.9;letter-spacing:.03em;text-transform:uppercase;margin-bottom:20px}
 .contact-h2 em{font-style:normal;color:var(--rd);text-shadow:0 0 9px rgba(232,25,44,.22);animation:purpleFlicker 12s ease-in-out infinite}
-.contact-desc{font-size:.72rem;color:rgba(242,240,255,.72);line-height:1.85;margin-bottom:28px;max-width:320px;font-family:'IBM Plex Mono',monospace}
+.contact-desc{font-size:.9rem;color:rgba(242,240,255,.72);line-height:1.85;margin-bottom:28px;max-width:320px;font-family:'IBM Plex Mono',monospace}
 .contact-info{display:flex;flex-direction:column;gap:14px}
-.c-row{display:flex;align-items:center;gap:12px;font-size:.68rem;color:rgba(242,240,255,.78);font-family:'IBM Plex Mono',monospace}
-.c-ico{width:30px;height:30px;border:1px solid rgba(232,25,44,.3);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--rd);flex-shrink:0}
+.c-row{display:flex;align-items:center;gap:12px;font-size:.84rem;color:rgba(242,240,255,.78);font-family:'IBM Plex Mono',monospace}
+.c-ico{width:30px;height:30px;border:1px solid rgba(232,25,44,.3);display:flex;align-items:center;justify-content:center;font-size:.88rem;color:var(--rd);flex-shrink:0}
 /* light side — form */
 .contact-light{
   background:var(--chalk2);
@@ -815,11 +815,11 @@ nav.solid{background:rgba(6,6,10,.99)}
 .contact-light .eyebrow::before{content:'// '}
 .contact-form{display:flex;flex-direction:column;gap:14px}
 .field label{display:block;font-size:.46rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rd-dk);margin-bottom:5px;font-weight:700;font-family:'IBM Plex Mono',monospace}
-.field input,.field textarea{width:100%;background:rgba(6,6,10,.06);border:1px solid rgba(232,25,44,.25);padding:12px 14px;color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:.75rem;outline:none;transition:border-color .25s,background .25s;border-radius:0}
+.field input,.field textarea{width:100%;background:rgba(6,6,10,.06);border:1px solid rgba(232,25,44,.25);padding:12px 14px;color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:.92rem;outline:none;transition:border-color .25s,background .25s;border-radius:0}
 .field input::placeholder,.field textarea::placeholder{color:rgba(6,6,10,.3)}
 .field input:focus,.field textarea:focus{border-color:var(--rd-dk);background:rgba(232,25,44,.05)}
 .field textarea{resize:none;height:108px}
-.send-btn{align-self:flex-start;background:var(--ink);color:var(--chalk);padding:13px 28px;font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;border:none;cursor:pointer;font-family:'IBM Plex Mono',monospace;transition:all .25s}
+.send-btn{align-self:flex-start;background:var(--ink);color:var(--chalk);padding:13px 28px;font-size:.9rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;border:none;cursor:pointer;font-family:'IBM Plex Mono',monospace;transition:all .25s}
 .send-btn:hover{background:var(--rd);box-shadow:0 0 20px rgba(232,25,44,.4)}
 
 /* ═══════════════════════════════════════
@@ -869,7 +869,7 @@ nav.solid{background:rgba(6,6,10,.99)}
 }
 .pol-h2 em{font-style:normal;color:var(--rd);text-shadow:0 0 9px rgba(232,25,44,.22);animation:purpleFlickerBig 14s ease-in-out infinite}
 .pol-header-sub{
-  font-size:.7rem;color:rgba(242,240,255,.6);line-height:1.85;
+  font-size:.88rem;color:rgba(242,240,255,.6);line-height:1.85;
   font-family:'IBM Plex Mono',monospace;max-width:300px;
 }
 @media(min-width:760px){.pol-header-sub{text-align:right}}
@@ -921,7 +921,7 @@ nav.solid{background:rgba(6,6,10,.99)}
   margin-bottom:8px;line-height:1.1;
 }
 .pol-card-text{
-  font-size:.68rem;color:rgba(242,240,255,1);line-height:1.8;
+  font-size:.84rem;color:rgba(242,240,255,1);line-height:1.8;
   font-family:'IBM Plex Mono',monospace;
 }
 /* accent dot on title */
@@ -940,7 +940,7 @@ nav.solid{background:rgba(6,6,10,.99)}
   border-top:1px solid rgba(232,25,44,.18);
 }
 @media(min-width:560px){.pol-cta-row{flex-direction:row;align-items:center;justify-content:space-between}}
-.pol-cta-note{font-size:.68rem;color:rgba(242,240,255,1);font-family:'IBM Plex Mono',monospace;line-height:1.7}
+.pol-cta-note{font-size:.84rem;color:rgba(242,240,255,1);font-family:'IBM Plex Mono',monospace;line-height:1.7}
 .pol-cta-note strong{color:var(--rd-lt)}
 
 /* ═══════════════════════════════════════
@@ -961,22 +961,22 @@ footer{
 .foot-brand{}
 .foot-logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.22em;color:var(--chalk);display:block;margin-bottom:10px;text-transform:uppercase}
 .foot-logo em{font-style:normal;color:var(--rd);text-shadow:0 0 12px rgba(232,25,44,.4)}
-.foot-desc{font-size:.66rem;line-height:1.85;color:rgba(242,240,255,1);max-width:200px;margin-bottom:18px;font-family:'IBM Plex Mono',monospace}
+.foot-desc{font-size:.82rem;line-height:1.85;color:rgba(242,240,255,1);max-width:200px;margin-bottom:18px;font-family:'IBM Plex Mono',monospace}
 .newsletter{display:flex;border:1px solid rgba(232,25,44,.2)}
-.newsletter input{flex:1;min-width:0;background:transparent;border:none;padding:9px 13px;color:var(--chalk);font-family:'IBM Plex Mono',monospace;font-size:.65rem;outline:none}
+.newsletter input{flex:1;min-width:0;background:transparent;border:none;padding:9px 13px;color:var(--chalk);font-family:'IBM Plex Mono',monospace;font-size:.82rem;outline:none}
 .newsletter input::placeholder{color:rgba(242,240,255,1)}
 .newsletter button{background:var(--rd);border:none;padding:9px 14px;font-size:.48rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--ink);cursor:pointer;font-family:'IBM Plex Mono',monospace;white-space:nowrap;transition:background .25s}
 .newsletter button:hover{background:var(--rd-lt)}
 .foot-col h4{font-size:.48rem;letter-spacing:.32em;text-transform:uppercase;color:var(--rd);font-weight:700;margin-bottom:14px;font-family:'IBM Plex Mono',monospace}
 .foot-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.foot-col ul a{font-size:.66rem;color:rgb(255, 255, 255);transition:color .25s;font-family:'IBM Plex Mono',monospace}
+.foot-col ul a{font-size:.82rem;color:rgb(255, 255, 255);transition:color .25s;font-family:'IBM Plex Mono',monospace}
 .foot-col ul a:hover{color:var(--rd-lt)}
 /* minimal bottom row */
 .foot-bottom{
   display:flex;flex-direction:column;gap:12px;align-items:flex-start;
 }
 @media(min-width:560px){.foot-bottom{flex-direction:row;justify-content:space-between;align-items:center}}
-.foot-copy{font-size:.52rem;color:rgba(242,240,255,1);font-family:'IBM Plex Mono',monospace}
+.foot-copy{font-size:.9rem;color:rgba(242,240,255,1);font-family:'IBM Plex Mono',monospace}
 .socials{display:flex;gap:7px}
 .soc-btn{width:30px;height:30px;border:1px solid rgba(242,240,255,.09);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:rgba(242,240,255,1);transition:all .25s;-webkit-tap-highlight-color:transparent}
 .soc-btn:hover{border-color:var(--rd);color:var(--rd);box-shadow:0 0 10px rgba(232,25,44,.25)}
@@ -1091,7 +1091,7 @@ footer{
   margin-bottom:18px;
 }
 .about-bio{
-  font-size:.72rem;color:rgb(242, 240, 255);
+  font-size:.9rem;color:rgb(242, 240, 255);
   line-height:2;font-family:'IBM Plex Mono',monospace;
   margin-bottom:28px;
 }
@@ -1167,7 +1167,7 @@ footer{
 }
 .nc-h2 em{font-style:normal;color:var(--rd);text-shadow:0 0 9px rgba(232,25,44,.22);animation:purpleFlickerBig 9s ease-in-out infinite}
 .nc-header-sub{
-  font-size:.7rem;color:rgb(242, 240, 255);line-height:1.85;
+  font-size:.88rem;color:rgb(242, 240, 255);line-height:1.85;
   font-family:'IBM Plex Mono',monospace;max-width:320px;
 }
 @media(min-width:760px){.nc-header-sub{text-align:right}}
@@ -1204,7 +1204,7 @@ footer{
   margin-bottom:5px;line-height:1.1;
 }
 .nc-step-text{
-  font-size:.68rem;color:rgb(242, 240, 255);
+  font-size:.84rem;color:rgb(242, 240, 255);
   line-height:1.8;font-family:'IBM Plex Mono',monospace;
 }
 
@@ -1236,7 +1236,7 @@ footer{
 }
 .nc-promo-h3 em{font-style:normal;color:var(--rd);text-shadow:0 0 9px rgba(232,25,44,.22);animation:purpleFlicker 8s ease-in-out infinite}
 .nc-promo-desc{
-  font-size:.7rem;color:rgba(242,240,255,1);line-height:1.85;
+  font-size:.88rem;color:rgba(242,240,255,1);line-height:1.85;
   font-family:'IBM Plex Mono',monospace;margin-bottom:22px;
 }
 .nc-code-box{
@@ -1263,7 +1263,7 @@ footer{
 .nc-what-list{display:flex;flex-direction:column;gap:8px}
 .nc-what-item{
   display:flex;align-items:flex-start;gap:10px;
-  font-size:.68rem;color:rgba(242,240,255,.68);
+  font-size:.84rem;color:rgba(242,240,255,.68);
   line-height:1.6;font-family:'IBM Plex Mono',monospace;
 }
 .nc-what-dot{
@@ -1315,7 +1315,7 @@ footer{
 .bm-body>div{height:auto !important}
 .bm-body .vagaro{width:100% !important;height:auto !important}
 .bm-foot{display:flex;align-items:center;justify-content:center;gap:10px;padding:10px 18px;border-top:1px solid rgba(232,25,44,.08);flex-shrink:0}
-.bm-foot span{color:rgba(232,25,44,.3);font-size:.7rem}
+.bm-foot span{color:rgba(232,25,44,.3);font-size:.88rem}
 .bm-foot p{font-family:'IBM Plex Mono',monospace;font-size:.5rem;letter-spacing:.12em;color:rgba(242,240,255,1);text-transform:uppercase}
 
 /* ═══════════════════════════════════════
@@ -1328,16 +1328,16 @@ footer{
 .wl-icon{width:46px;height:46px;background:rgba(232,25,44,.08);border:1px solid rgba(232,25,44,.2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:16px}
 .wl-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,2.8rem);line-height:.95;margin-bottom:7px;letter-spacing:.04em;text-transform:uppercase}
 .wl-title em{font-style:normal;color:var(--rd);text-shadow:0 0 16px rgba(232,25,44,.4)}
-.wl-desc{font-size:.68rem;color:rgba(242,240,255,1);line-height:1.8;margin-bottom:20px;font-family:'IBM Plex Mono',monospace}
+.wl-desc{font-size:.84rem;color:rgba(242,240,255,1);line-height:1.8;margin-bottom:20px;font-family:'IBM Plex Mono',monospace}
 .wl-fields{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
-.wl-input,.wl-select{width:100%;background:rgba(232,25,44,.03);border:1px solid rgba(232,25,44,.14);padding:11px 14px;color:var(--chalk);font-family:'IBM Plex Mono',monospace;font-size:.74rem;outline:none;transition:border-color .25s;border-radius:0}
+.wl-input,.wl-select{width:100%;background:rgba(232,25,44,.03);border:1px solid rgba(232,25,44,.14);padding:11px 14px;color:var(--chalk);font-family:'IBM Plex Mono',monospace;font-size:.9rem;outline:none;transition:border-color .25s;border-radius:0}
 .wl-input::placeholder{color:rgba(242,240,255,1)}
 .wl-input:focus,.wl-select:focus{border-color:var(--rd)}
 .wl-select{-webkit-appearance:none;appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23BF5FFF' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;padding-right:36px}
 .wl-select option{background:var(--ink3)}
 .wl-submit{width:100%;background:var(--rd);color:var(--ink);border:none;padding:13px;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;cursor:pointer;box-shadow:0 0 20px rgba(232,25,44,.3);transition:all .25s;font-family:'IBM Plex Mono',monospace}
 .wl-submit:hover{background:var(--rd-lt);box-shadow:0 0 32px rgba(232,25,44,.5)}
-.wl-note{font-size:.54rem;color:rgba(242,240,255,1);text-align:center;margin-top:10px;line-height:1.6;font-family:'IBM Plex Mono',monospace}
+.wl-note{font-size:.9rem;color:rgba(242,240,255,1);text-align:center;margin-top:10px;line-height:1.6;font-family:'IBM Plex Mono',monospace}
 .wl-close{position:absolute;top:14px;right:14px;width:26px;height:26px;border:1px solid rgba(242,240,255,.1);background:transparent;color:rgba(242,240,255,.36);font-size:.8rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s}
 .wl-close:hover{border-color:var(--rd);color:var(--rd)}
 
@@ -1377,7 +1377,7 @@ footer{
         <option value="" disabled selected>Which service are you interested in?</option>
         <option>Skin Fade — $170</option>
         <option>Taper Fade — $150</option>
-        <option>Dread Retwist — $190</option>
+        <option>Bald Fade — $40</option>
         <option>Lineup + Beard</option>
         <option>Any available</option>
       </select>
@@ -1461,7 +1461,7 @@ footer{
   <div class="hero-left">
     <div class="hero-eyebrow"><span class="badge-dot"></span>Premium Barbershop</div>
     <h1>Sharp<br>Clean<br><span class="line2">Fades</span></h1>
-    <p class="hero-sub">Precision fades, clean lineups, and expert dread work. Every client leaves looking fresh, sharp, and ready to turn heads.</p>
+    <p class="hero-sub">Precision fades, clean lineups, and sharp cuts. Every client leaves looking fresh, sharp, and ready to turn heads.</p>
     <div class="hero-btns">
       <button class="btn btn-pu" id="heroBook">Book Now</button>
       <a href="#gallery" class="btn btn-outline-chalk">View Gallery</a>
@@ -1484,14 +1484,14 @@ footer{
   <div class="ticker-track">
     <span>Skin Fade</span><span class="sep">&#x2726;</span>
     <span>Taper Fade</span><span class="sep">&#x2726;</span>
-    <span>Dread Retwist</span><span class="sep">&#x2726;</span>
+    <span>Bald Fade</span><span class="sep">&#x2726;</span>
     <span>Lineup &amp; Edge Up</span><span class="sep">&#x2726;</span>
     <span>Beard Trim</span><span class="sep">&#x2726;</span>
     <span>Kids Cuts</span><span class="sep">&#x2726;</span>
     <span>Bald Fade</span><span class="sep">&#x2726;</span>
     <span>Skin Fade</span><span class="sep">&#x2726;</span>
     <span>Taper Fade</span><span class="sep">&#x2726;</span>
-    <span>Dread Retwist</span><span class="sep">&#x2726;</span>
+    <span>Bald Fade</span><span class="sep">&#x2726;</span>
     <span>Lineup &amp; Edge Up</span><span class="sep">&#x2726;</span>
     <span>Beard Trim</span><span class="sep">&#x2726;</span>
     <span>Kids Cuts</span><span class="sep">&#x2726;</span>
@@ -1520,8 +1520,8 @@ footer{
       <h2 class="about-h2">The Craft<br>Behind <em>KCutyyy</em></h2>
       <div class="about-name">✦ Founder &amp; Master Barber</div>
       <p class="about-bio">
-        Hey, I'm the face behind <strong>KCutyyy</strong> — and I've been obsessed with the art of wig installs since day one. What started as a passion turned into a craft, and that craft turned into a studio where every single client leaves feeling like the most beautiful version of themselves.<br><br>
-        I specialize in <strong>undetectable lace melts</strong>, custom styling, and making sure your install lasts. I believe every head of hair tells a story — and I'm here to make sure yours is flawless.
+        I'm the barber behind <strong>KCutyyy</strong> — and cutting has been my craft since day one. What started as a skill turned into a passion, and that passion turned into a reputation built on clean work and consistency. Every client that sits in my chair gets my full attention and my best work.<br><br>
+        I specialize in <strong>precision fades</strong>, sharp lineups, and clean cuts tailored to your hair type and the style you're going for. No rush, no shortcuts — just solid barbering, every time.
       </p>
 
       <!-- credentials stats -->
@@ -1594,7 +1594,7 @@ footer{
           <div class="nc-step-num">03</div>
           <div>
             <div class="nc-step-title">Bring Your Inspo</div>
-            <p class="nc-step-text">Have your inspiration photos or reference cuts ready. Whether it's a specific fade style, dread look, or lineup — knowing what you want helps me deliver exactly what you're envisioning.</p>
+            <p class="nc-step-text">Have your inspiration photos or reference cuts ready. Whether it's a specific fade style, cut style, or lineup — knowing what you want helps me deliver exactly what you're envisioning.</p>
           </div>
         </div>
 
@@ -1602,7 +1602,7 @@ footer{
           <div class="nc-step-num">04</div>
           <div>
             <div class="nc-step-title">Plan Your Time</div>
-            <p class="nc-step-text">A typical haircut takes 30–90 minutes depending on the service. Dread retwists may take longer. Don't rush — great cuts take time. Come relaxed and bring headphones if you like!</p>
+            <p class="nc-step-text">A typical haircut takes 30–90 minutes depending on the service. Longer services like full cuts with beards may take more time. Don't rush — great cuts take time. Kick back and bring headphones if you like.</p>
           </div>
         </div>
 
@@ -1617,7 +1617,7 @@ footer{
         <div class="nc-code-box">
           <div>
             <div class="nc-code">FRESHCUT10</div>
-            <div class="nc-code-label">Promo code — first install only</div>
+            <div class="nc-code-label">Promo code — first cut only</div>
           </div>
           <button onclick="navigator.clipboard.writeText('FRESHCUT10').then(function(){ this.textContent='Copied!'; var b=this; setTimeout(function(){ b.textContent='Copy'; },2000); }.bind(this))" style="background:var(--rd);border:none;color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:.48rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:7px 14px;cursor:pointer;white-space:nowrap;transition:all .2s">Copy</button>
         </div>
@@ -1632,7 +1632,7 @@ footer{
           </div>
         </div>
 
-        <button class="btn btn-pu" onclick="smoothScrollTo(document.getElementById('specials'), 900)" style="width:100%;justify-content:center;padding:14px 24px;font-size:.54rem">Book Your First Cut &#8594;</button>
+        <button class="btn btn-pu" onclick="smoothScrollTo(document.getElementById('specials'), 900)" style="width:100%;justify-content:center;padding:14px 24px;font-size:.9rem">Book Your First Cut &#8594;</button>
       </div>
 
     </div>
@@ -1671,12 +1671,12 @@ footer{
         </div>
       </div>
       <div class="svc-card" id="svcCard3">
-        <img src="client16.png" alt="Dread Retwist">
+        <img src="client16.png" alt="Bald Fade">
         <div class="svc-veil"></div>
         <div class="svc-body">
           <div class="svc-num">03 / Service</div>
-          <div class="svc-title">Dread Retwist</div>
-          <div class="svc-price">Starting at $60</div>
+          <div class="svc-title">Bald Fade</div>
+          <div class="svc-price">Starting at $40</div>
           <button class="svc-book-btn" id="svcBtn3">Book This</button>
         </div>
       </div>
@@ -1877,12 +1877,12 @@ footer{
       </div>
       <div class="t-card">
         <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="t-text">"He retwisted my dreads and cleaned up the fade — did it <em>flawlessly</em>. The attention to detail is unmatched."</p>
-        <div class="t-attr"><img class="t-img" src="client12.png" alt="Destiny R"><div><div class="t-name">Jaylen R.</div><div class="t-role">Dread Retwist</div></div></div>
+        <p class="t-text">"He shaped me up and knocked out the fade — came out <em>cleaner than expected</em>. The attention to detail is unmatched."</p>
+        <div class="t-attr"><img class="t-img" src="client12.png" alt="Destiny R"><div><div class="t-name">Jaylen R.</div><div class="t-role">Bald Fade</div></div></div>
       </div>
       <div class="t-card">
         <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="t-text">"My lineup was so clean, I almost cried. The vibe is relaxed and he really takes his time. <em>10/10!</em>"</p>
+        <p class="t-text">"My lineup was razor clean — sharpest it's ever looked. The vibe is chill and she takes her time. <em>10/10!</em>"</p>
         <div class="t-attr"><img class="t-img" src="client10.png" alt="Kezia B"><div><div class="t-name">Chris B.</div><div class="t-role">Taper Fade</div></div></div>
       </div>
     </div>
@@ -1919,7 +1919,7 @@ footer{
       <div class="faq-list">
         <div class="faq-item">
           <div class="faq-q"><span class="faq-q-text">How long does a haircut take?</span><span class="faq-icon">+</span></div>
-          <div class="faq-a"><p>Most haircuts take 30–60 minutes. Dread retwists and full cut + beard services may take 90 minutes or more. You'll receive a time estimate when you book.</p></div>
+          <div class="faq-a"><p>Most haircuts take 30–60 minutes. Full cut + beard services may take 90 minutes or more. You'll receive a time estimate when you book.</p></div>
         </div>
         <div class="faq-item">
           <div class="faq-q"><span class="faq-q-text">Do I need to book in advance?</span><span class="faq-icon">+</span></div>
@@ -1927,14 +1927,14 @@ footer{
         </div>
         <div class="faq-item">
           <div class="faq-q"><span class="faq-q-text">What styles do you specialize in?</span><span class="faq-icon">+</span></div>
-          <div class="faq-a"><p>We specialize in skin fades, taper fades, dread retwists, lineups, edge-ups, and beard work. Whether you want a bald fade, a high-top, or a fresh dread retwist with a fade — we've got you covered.</p></div>
+          <div class="faq-a"><p>We specialize in skin fades, taper fades, bald fades, lineups, edge-ups, and beard work. Whether you want a razor-clean bald fade, a high-top, or a fresh taper — we've got you covered.</p></div>
         </div>
       </div>
       <!-- Column 2 -->
       <div class="faq-list">
         <div class="faq-item">
           <div class="faq-q"><span class="faq-q-text">How often should I come in?</span><span class="faq-icon">+</span></div>
-          <div class="faq-a"><p>For fades and tapers, we recommend coming in every 2–3 weeks to keep it looking fresh. Dread retwists are typically every 4–6 weeks depending on your hair growth.</p></div>
+          <div class="faq-a"><p>For fades and tapers, we recommend coming in every 2–3 weeks to keep it looking fresh. The tighter you like your cut, the more often you'll want to come back.</p></div>
         </div>
         <div class="faq-item">
           <div class="faq-q"><span class="faq-q-text">Is a deposit required to book?</span><span class="faq-icon">+</span></div>
@@ -1967,7 +1967,7 @@ footer{
   <div class="contact-light">
     <div class="eyebrow">Send a Message</div>
     <div class="contact-form">
-      <div class="field"><label>Your Name</label><input type="text" placeholder="e.g. Jasmine Smith" autocomplete="name"></div>
+      <div class="field"><label>Your Name</label><input type="text" placeholder="e.g. Marcus Smith" autocomplete="name"></div>
       <div class="field"><label>Email</label><input type="email" placeholder="you@email.com" autocomplete="email"></div>
       <div class="field"><label>Your Question</label><textarea placeholder="What would you like to know?" style="min-height:130px"></textarea></div>
       <button class="send-btn">Send Message &#8594;</button>
@@ -2035,7 +2035,7 @@ footer{
   <div class="foot-top">
     <div class="foot-brand">
       <span class="foot-logo">K<em>Cutyyy</em></span>
-      <p class="foot-desc">Book your fresh cut today and step out sharper than ever. Where Craft Meets Precision.</p>
+      <p class="foot-desc">Sharp cuts, clean fades, and consistent work. Where Craft Meets Precision.</p>
       <div class="newsletter"><input type="email" id="footerEmail" placeholder="Your email..."><button id="footerSubscribe">Subscribe</button></div>
     </div>
     <div class="foot-col"><h4>Pages</h4><ul><li><a href="#">Home</a></li><li><a href="#about">About</a></li><li><a href="#new-clients">New Clients</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div>
@@ -2108,7 +2108,7 @@ window.addEventListener('resize', setNavTop);
 document.getElementById('promoX').addEventListener('click',function(){
   promoBanner.classList.add('hidden');
   // After transition ends, snap nav to top
-  setTimeout(setNavTop, 420);
+  setNavTop(); // snap immediately when banner closes
 });
 document.getElementById('promoCta').addEventListener('click',function(){ smoothScrollTo(document.getElementById('specials'), 900); });
 
@@ -2131,7 +2131,7 @@ document.getElementById('wlSubmit').addEventListener('click',function(){
   fetch(zapierURL,{method:'POST',body:params})
     .then(function(res){ console.log('Zapier waitlist modal:', res.status); })
     .catch(function(err){ console.warn('Zapier error:', err); });
-  document.querySelector('.wl-panel').innerHTML='<div style="text-align:center;padding:28px 18px"><div style="font-family:Bebas Neue,sans-serif;font-size:3.8rem;color:var(--rd);text-shadow:0 0 16px rgba(232,25,44,.4);margin-bottom:14px">&#10003;</div><div style="font-family:Bebas Neue,sans-serif;font-size:2.2rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:11px">You\'re on the waitlist!</div><p style="font-size:.72rem;color:rgba(242,240,255,.44);line-height:1.85;max-width:290px;margin:0 auto;font-family:IBM Plex Mono,monospace">Hi <strong style="color:var(--rd-lt)">'+name+'</strong> — we\'ll reach out to <strong style="color:var(--rd-lt)">'+em+'</strong> the moment a spot opens.</p><button onclick="closeWaitlist()" style="margin-top:24px;display:inline-flex;padding:11px 26px;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;background:var(--rd);color:var(--ink);border:none;cursor:pointer;font-family:IBM Plex Mono,monospace;">Close</button></div>';
+  document.querySelector('.wl-panel').innerHTML='<div style="text-align:center;padding:28px 18px"><div style="font-family:Bebas Neue,sans-serif;font-size:3.8rem;color:var(--rd);text-shadow:0 0 16px rgba(232,25,44,.4);margin-bottom:14px">&#10003;</div><div style="font-family:Bebas Neue,sans-serif;font-size:2.2rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:11px">You\'re on the waitlist!</div><p style="font-size:.9rem;color:rgba(242,240,255,.44);line-height:1.85;max-width:290px;margin:0 auto;font-family:IBM Plex Mono,monospace">Hi <strong style="color:var(--rd-lt)">'+name+'</strong> — we\'ll reach out to <strong style="color:var(--rd-lt)">'+em+'</strong> the moment a spot opens.</p><button onclick="closeWaitlist()" style="margin-top:24px;display:inline-flex;padding:11px 26px;font-size:.9rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;background:var(--rd);color:var(--ink);border:none;cursor:pointer;font-family:IBM Plex Mono,monospace;">Close</button></div>';
 });
 
 /* ── BOOKING MODAL ── */
@@ -2201,15 +2201,15 @@ var s1=document.getElementById('svcBtn1'); if(s1) s1.addEventListener('click',fu
 var c1=document.getElementById('svcCard1'); if(c1) c1.addEventListener('click',function(e){ if(e.target.closest('#svcBtn1')) return; openBooking('vagaroStore1','Skin Fade'); });
 var s2=document.getElementById('svcBtn2'); if(s2) s2.addEventListener('click',function(e){ e.stopPropagation(); openBooking('vagaroStore2','Taper Fade'); });
 var c2=document.getElementById('svcCard2'); if(c2) c2.addEventListener('click',function(e){ if(e.target.closest('#svcBtn2')) return; openBooking('vagaroStore2','Taper Fade'); });
-var s3=document.getElementById('svcBtn3'); if(s3) s3.addEventListener('click',function(e){ e.stopPropagation(); openBooking('vagaroStore3','Dread Retwist'); });
-var c3=document.getElementById('svcCard3'); if(c3) c3.addEventListener('click',function(e){ if(e.target.closest('#svcBtn3')) return; openBooking('vagaroStore3','Dread Retwist'); });
+var s3=document.getElementById('svcBtn3'); if(s3) s3.addEventListener('click',function(e){ e.stopPropagation(); openBooking('vagaroStore3','Bald Fade'); });
+var c3=document.getElementById('svcCard3'); if(c3) c3.addEventListener('click',function(e){ if(e.target.closest('#svcBtn3')) return; openBooking('vagaroStore3','Bald Fade'); });
 var s4=document.getElementById('svcCtaBtn'); if(s4) s4.addEventListener('click',function(e){ e.stopPropagation(); openBooking('vagaroStore4','Lineup + Beard'); });
 var c4=document.getElementById('svcCard4'); if(c4) c4.addEventListener('click',function(e){ if(e.target.closest('#svcCtaBtn')) return; openBooking('vagaroStore4','Lineup + Beard'); });
 
 // Service cards still open booking modal
 var svcCardMap = {
   svcBtn1:'Skin Fade', svcBtn2:'Taper Fade',
-  svcBtn3:'Dread Retwist', svcCtaBtn:'General'
+  svcBtn3:'Bald Fade', svcCtaBtn:'General'
 };
 Object.keys(svcCardMap).forEach(function(id){
   var el = document.getElementById(id);
@@ -2219,7 +2219,7 @@ Object.keys(svcCardMap).forEach(function(id){
   });
 });
 ['svcCard1','svcCard2','svcCard3','svcCard4'].forEach(function(id,i){
-  var svcs=['Skin Fade','Taper Fade','Dread Retwist','General'];
+  var svcs=['Skin Fade','Taper Fade','Bald Fade','General'];
   var el=document.getElementById(id);
   if(el) el.addEventListener('click',function(){ openBooking(svcs[i]); });
 });
@@ -2398,7 +2398,7 @@ document.getElementById('wlTrigger').addEventListener('click', function(){
   fetch('https://hooks.zapier.com/hooks/catch/26687679/u0pg4m2/',{method:'POST',body:new URLSearchParams({name:name,email:em,phone:phone,service:service,date:date})})
     .then(function(r){ console.log('Zapier waitlist banner:', r.status); }).catch(function(e){ console.warn(e); });
   // success state
-  document.querySelector('.wl-strip-right').innerHTML = '<div style="padding:20px 0"><div style="font-family:Bebas Neue,sans-serif;font-size:3rem;color:var(--rd);text-shadow:0 0 20px rgba(232,25,44,.5);line-height:1;margin-bottom:10px">&#10003; You\'re on the list!</div><p style="font-size:.72rem;color:rgba(242,240,255,1);line-height:1.85;font-family:IBM Plex Mono,monospace">We\'ll text or email <strong style="color:var(--rd-lt)">'+name+'</strong> the moment a spot opens up.</p></div>';
+  document.querySelector('.wl-strip-right').innerHTML = '<div style="padding:20px 0"><div style="font-family:Bebas Neue,sans-serif;font-size:3rem;color:var(--rd);text-shadow:0 0 20px rgba(232,25,44,.5);line-height:1;margin-bottom:10px">&#10003; You\'re on the list!</div><p style="font-size:.9rem;color:rgba(242,240,255,1);line-height:1.85;font-family:IBM Plex Mono,monospace">We\'ll text or email <strong style="color:var(--rd-lt)">'+name+'</strong> the moment a spot opens up.</p></div>';
 });
 
 /* ── SERVICES CAROUSEL ── */
@@ -2439,23 +2439,24 @@ function svcGoTo(n){
 function svcStartAuto(){
   svcStopAuto();
   svcAutoTimer = setInterval(function(){
-    if(svcScrolling) return; // skip tick if still animating
+    if(svcScrolling) return;
     var next = svcCur >= svcCards.length - 1 ? 0 : svcCur + 1;
     svcGoTo(next);
-  }, 5000);
+  }, 4000);
 }
 function svcStopAuto(){ clearInterval(svcAutoTimer); svcAutoTimer = null; }
-function svcResetAuto(){ svcStopAuto(); if(window.innerWidth < 1024) svcStartAuto(); }
+// Always restart auto after user interaction (all screen sizes)
+function svcResetAuto(){ svcStopAuto(); setTimeout(svcStartAuto, 3000); }
 
 document.getElementById('svcPrev').addEventListener('click', function(){ svcGoTo(svcCur - 1); svcResetAuto(); });
 document.getElementById('svcNext').addEventListener('click', function(){ svcGoTo(svcCur + 1); svcResetAuto(); });
 
-// Only auto-advance on mobile/tablet
-if(window.innerWidth < 1024){ svcStartAuto(); }
+// Auto-slide on ALL screen sizes
+svcStartAuto();
 window.addEventListener('resize', function(){
   svcStopAuto();
   svcGoTo(0);
-  if(window.innerWidth < 1024){ svcStartAuto(); }
+  svcStartAuto();
 });
 
 // Touch swipe
@@ -2467,24 +2468,26 @@ svcWrap.addEventListener('touchstart', function(e){
 svcWrap.addEventListener('touchend', function(e){
   var dx = svcTouchStartX - e.changedTouches[0].clientX;
   if(Math.abs(dx) > 40){ svcGoTo(dx > 0 ? svcCur + 1 : svcCur - 1); }
-  if(window.innerWidth < 1024) svcResetAuto();
+  svcResetAuto();
 }, { passive: true });
 
-// Mouse drag (desktop only)
+// Mouse drag (desktop)
 var isDown = false, startX, scrollLeft;
 svcWrap.addEventListener('mousedown', function(e){ isDown = true; svcWrap.style.cursor = 'grabbing'; startX = e.pageX - svcWrap.offsetLeft; scrollLeft = svcWrap.scrollLeft; svcStopAuto(); });
 svcWrap.addEventListener('mouseleave', function(){ isDown = false; svcWrap.style.cursor = 'grab'; });
 svcWrap.addEventListener('mouseup', function(){ isDown = false; svcWrap.style.cursor = 'grab'; svcResetAuto(); });
 svcWrap.addEventListener('mousemove', function(e){ if(!isDown) return; e.preventDefault(); var x = e.pageX - svcWrap.offsetLeft; svcWrap.scrollLeft = scrollLeft - (x - startX) * 1.5; });
 
-// Mouse wheel → horizontal scroll (desktop only)
+// Mouse wheel → horizontal scroll on ALL screen sizes
+var svcWheelTimer = null;
 svcWrap.addEventListener('wheel', function(e){
-  if(window.innerWidth < 1024) return; // touch devices handle their own scroll
   e.preventDefault();
-  var cardW = svcCards[0].offsetWidth + 14;
-  var dir = e.deltaY > 0 ? 1 : -1;
+  clearTimeout(svcWheelTimer);
+  svcStopAuto();
+  var dir = e.deltaY > 0 || e.deltaX > 0 ? 1 : -1;
   svcGoTo(svcCur + dir);
-  svcResetAuto();
+  // resume auto after user stops scrolling
+  svcWheelTimer = setTimeout(svcStartAuto, 3000);
 }, { passive: false });
 
 /* ── SMOOTH SCROLL — requestAnimationFrame lerp ── */
