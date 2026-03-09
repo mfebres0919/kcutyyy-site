@@ -261,14 +261,16 @@ nav.solid{background:rgba(6,6,10,.99)}
 .hero-right{
   position:relative;overflow:hidden;
   min-height:60vw;order:2;
+  padding:0 var(--pad);
 }
 @media(min-width:760px){
-  .hero-right{min-height:100svh;order:2}
+  .hero-right{min-height:100svh;order:2;padding:0;}
 }
 .hero-right img{
   width:100%;height:100%;object-fit:cover;object-position:top center;
   animation:zoomIn 1.8s ease forwards;
   filter:saturate(.75);
+  border-radius:2px;
 }
 @keyframes zoomIn{from{transform:scale(1.08)}to{transform:scale(1)}}
 /* purple tint overlay */
@@ -314,21 +316,16 @@ nav.solid{background:rgba(6,6,10,.99)}
 .svc-h2 em{font-style:normal;color:var(--rd);text-shadow:0 0 9px rgba(232,25,44,.22);animation:purpleFlicker 8s ease-in-out infinite}
 .svc-header-right{font-size:.88rem;color:rgb(242, 240, 255);max-width:220px;line-height:1.8;font-family:'IBM Plex Mono',monospace;align-self:flex-end;padding-bottom:8px}
 /* drag scroll */
-.svc-scroll-wrap{overflow-x:auto;overflow-y:hidden;cursor:grab;-webkit-overflow-scrolling:touch;padding-bottom:4px;touch-action:pan-x;scroll-snap-type:x mandatory;}
-.svc-card{scroll-snap-align:start;}
-.svc-scroll-wrap:active{cursor:grabbing}
-.svc-scroll-wrap::-webkit-scrollbar{height:2px}
-.svc-scroll-wrap::-webkit-scrollbar-track{background:rgba(232,25,44,.05)}
-.svc-scroll-wrap::-webkit-scrollbar-thumb{background:var(--rd);box-shadow:0 0 6px rgba(232,25,44,.4)}
-.svc-track{display:flex;gap:14px;padding-right:var(--pad);width:max-content}
+.svc-scroll-wrap{overflow:hidden;position:relative;}
+.svc-track{display:flex;gap:0;transition:transform .55s cubic-bezier(.4,0,.2,1);will-change:transform;}
 .svc-card{
-  flex:0 0 300px;height:440px;
+  flex:0 0 100%;height:460px;
   position:relative;overflow:hidden;
   border:1px solid rgba(232,25,44,.1);
   cursor:pointer;-webkit-tap-highlight-color:transparent;
   transition:border-color .3s,box-shadow .3s;
 }
-@media(min-width:600px){.svc-card{flex:0 0 340px;height:480px}}
+@media(min-width:760px){.svc-card{flex:0 0 340px;height:480px}}
 .svc-card:hover{border-color:rgba(232,25,44,.45);box-shadow:0 0 28px rgba(232,25,44,.12)}
 .svc-card img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .65s cubic-bezier(.4,0,.2,1);filter:saturate(.72)}
 .svc-card:hover img{transform:scale(1.06);filter:saturate(.95)}
@@ -343,7 +340,7 @@ nav.solid{background:rgba(6,6,10,.99)}
 .svc-nav{
   display:flex;align-items:center;gap:12px;margin-top:18px;padding-left:var(--pad);
 }
-@media(min-width:1024px){.svc-nav{display:none}} /* hide on desktop */
+/* svc-nav visible on all screen sizes */
 .svc-arr{
   width:40px;height:40px;
   border:1px solid rgba(232,25,44,.3);
@@ -1340,7 +1337,7 @@ footer{
 .wl-note{font-size:.9rem;color:rgba(242,240,255,1);text-align:center;margin-top:10px;line-height:1.6;font-family:'IBM Plex Mono',monospace}
 .wl-close{position:absolute;top:14px;right:14px;width:26px;height:26px;border:1px solid rgba(242,240,255,.1);background:transparent;color:rgba(242,240,255,.36);font-size:.8rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s}
 .wl-close:hover{border-color:var(--rd);color:var(--rd)}
-.red {color:rgb(255, 76, 76)}
+
 @media(min-width:1800px){
   :root{--pad:clamp(80px,8vw,140px)}
   body{max-width:1800px;margin:0 auto}
@@ -1506,10 +1503,10 @@ footer{
     <!-- LEFT: photo -->
     <div class="about-img-wrap">
       <div class="about-img-frame">
-        <img src="about-2.png" alt="KCutyyy barber" style="object-position:center top">
+        <img src="aboutme.png" alt="KCutyyy barber" style="object-position:center top">
       </div>
       <div class="about-badge">
-        <div class="about-badge-num">6+</div>
+        <div class="about-badge-num">5+</div>
         <div class="about-badge-label">Years of<br>Craft</div>
       </div>
     </div>
@@ -1649,9 +1646,9 @@ footer{
     <p class="svc-header-right">Each service is tailored to your hair type and the look you're going for. No cookie-cutter cuts here — just precision craft.</p>
   </div>
   <div class="svc-scroll-wrap" id="svcScrollWrap">
-    <div class="svc-track">
+    <div class="svc-track" id="svcTrack">
       <div class="svc-card" id="svcCard1">
-        <img src="client14.png" alt="Skin Fade">
+        <img src="client18.png" alt="Skin Fade">
         <div class="svc-veil"></div>
         <div class="svc-body">
           <div class="svc-num">01 / Service</div>
@@ -1716,21 +1713,21 @@ footer{
       <div class="wl-step">
         <span class="wl-step-num">01</span>
         <div>
-          <strong class="red">Book your service</strong>
+          <strong>Book your service</strong>
           <p>Go through checkout as normal. If your date is full, Vagaro will show you the next available slot — or let you join the waitlist directly.</p>
         </div>
       </div>
       <div class="wl-step">
         <span class="wl-step-num">02</span>
         <div>
-          <strong class="red">You get added automatically</strong>
+          <strong>You get added automatically</strong>
           <p>No extra form needed. Vagaro puts you in line the moment you click "Join Waitlist" inside the booking flow.</p>
         </div>
       </div>
       <div class="wl-step">
         <span class="wl-step-num">03</span>
         <div>
-          <strong class="red">We reach out instantly</strong>
+          <strong>We reach out instantly</strong>
           <p>The second a cancellation opens up, Vagaro notifies you by email or text. First to respond gets the slot.</p>
         </div>
       </div>
@@ -2402,14 +2399,14 @@ document.getElementById('wlTrigger').addEventListener('click', function(){
 });
 
 /* ── SERVICES CAROUSEL ── */
-var svcWrap = document.getElementById('svcScrollWrap');
-var svcCards = Array.from(svcWrap.querySelectorAll('.svc-card'));
+var svcWrap  = document.getElementById('svcScrollWrap');
+var svcTrack = document.getElementById('svcTrack');
+var svcCards = Array.from(svcTrack.querySelectorAll('.svc-card'));
 var svcDotsEl = document.getElementById('svcDots');
 var svcCur = 0;
 var svcAutoTimer = null;
-var svcScrolling = false; // guard: don't advance while a scroll animation is running
 
-// build dots
+// Build dots
 svcCards.forEach(function(_, i){
   var d = document.createElement('span');
   d.className = 'svc-nav-dot' + (i === 0 ? ' active' : '');
@@ -2427,68 +2424,46 @@ function svcUpdateUI(){
 
 function svcGoTo(n){
   svcCur = Math.max(0, Math.min(n, svcCards.length - 1));
-  var cardW = svcCards[0].offsetWidth + 14;
-  svcScrolling = true;
-  svcWrap.scrollTo({ left: svcCur * cardW, behavior: 'smooth' });
-  // clear scrolling flag after transition finishes (~500ms)
-  clearTimeout(svcWrap._scrollEndTimer);
-  svcWrap._scrollEndTimer = setTimeout(function(){ svcScrolling = false; }, 520);
+  var cardW = svcWrap.offsetWidth;
+  svcTrack.style.transform = 'translateX(-' + (svcCur * cardW) + 'px)';
   svcUpdateUI();
 }
 
 function svcStartAuto(){
   svcStopAuto();
   svcAutoTimer = setInterval(function(){
-    if(svcScrolling) return;
-    var next = svcCur >= svcCards.length - 1 ? 0 : svcCur + 1;
-    svcGoTo(next);
+    svcGoTo(svcCur >= svcCards.length - 1 ? 0 : svcCur + 1);
   }, 4000);
 }
-function svcStopAuto(){ clearInterval(svcAutoTimer); svcAutoTimer = null; }
-// Always restart auto after user interaction (all screen sizes)
+function svcStopAuto(){ clearInterval(svcAutoTimer); }
 function svcResetAuto(){ svcStopAuto(); setTimeout(svcStartAuto, 3000); }
 
 document.getElementById('svcPrev').addEventListener('click', function(){ svcGoTo(svcCur - 1); svcResetAuto(); });
 document.getElementById('svcNext').addEventListener('click', function(){ svcGoTo(svcCur + 1); svcResetAuto(); });
 
-// Auto-slide on ALL screen sizes
+function svcSetSizes(){
+  var w = svcWrap.offsetWidth;
+  svcCards.forEach(function(c){ c.style.width = w + 'px'; c.style.flexShrink = '0'; });
+}
+svcSetSizes();
 svcStartAuto();
-window.addEventListener('resize', function(){
-  svcStopAuto();
-  svcGoTo(0);
-  svcStartAuto();
-});
+window.addEventListener('resize', function(){ svcSetSizes(); svcGoTo(0); });
 
 // Touch swipe
-var svcTouchStartX = 0;
-svcWrap.addEventListener('touchstart', function(e){
-  svcTouchStartX = e.touches[0].clientX;
-  svcStopAuto();
-}, { passive: true });
+var svcTouchX = 0;
+svcWrap.addEventListener('touchstart', function(e){ svcTouchX = e.touches[0].clientX; svcStopAuto(); }, {passive:true});
 svcWrap.addEventListener('touchend', function(e){
-  var dx = svcTouchStartX - e.changedTouches[0].clientX;
+  var dx = svcTouchX - e.changedTouches[0].clientX;
   if(Math.abs(dx) > 40){ svcGoTo(dx > 0 ? svcCur + 1 : svcCur - 1); }
   svcResetAuto();
-}, { passive: true });
+}, {passive:true});
 
-// Mouse drag (desktop)
-var isDown = false, startX, scrollLeft;
-svcWrap.addEventListener('mousedown', function(e){ isDown = true; svcWrap.style.cursor = 'grabbing'; startX = e.pageX - svcWrap.offsetLeft; scrollLeft = svcWrap.scrollLeft; svcStopAuto(); });
-svcWrap.addEventListener('mouseleave', function(){ isDown = false; svcWrap.style.cursor = 'grab'; });
-svcWrap.addEventListener('mouseup', function(){ isDown = false; svcWrap.style.cursor = 'grab'; svcResetAuto(); });
-svcWrap.addEventListener('mousemove', function(e){ if(!isDown) return; e.preventDefault(); var x = e.pageX - svcWrap.offsetLeft; svcWrap.scrollLeft = scrollLeft - (x - startX) * 1.5; });
-
-// Mouse wheel → horizontal scroll on ALL screen sizes
-var svcWheelTimer = null;
+// Mouse wheel (desktop)
 svcWrap.addEventListener('wheel', function(e){
   e.preventDefault();
-  clearTimeout(svcWheelTimer);
-  svcStopAuto();
-  var dir = e.deltaY > 0 || e.deltaX > 0 ? 1 : -1;
-  svcGoTo(svcCur + dir);
-  // resume auto after user stops scrolling
-  svcWheelTimer = setTimeout(svcStartAuto, 3000);
-}, { passive: false });
+  svcGoTo(svcCur + (e.deltaY > 0 ? 1 : -1));
+  svcResetAuto();
+}, {passive:false});
 
 /* ── SMOOTH SCROLL — requestAnimationFrame lerp ── */
 function smoothScrollTo(target, duration){
