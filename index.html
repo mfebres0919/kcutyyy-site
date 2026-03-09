@@ -193,7 +193,7 @@ nav.solid{background:rgba(6,6,10,.99)}
   min-height:100svh;
   display:grid;
   grid-template-columns:1fr;
-  padding-top:calc(var(--banner-h) + var(--nav-h));
+  padding-top:0;
   position:relative;
 }
 @media(min-width:760px){
@@ -409,9 +409,9 @@ nav.solid{background:rgba(6,6,10,.99)}
 .wl-steps{display:flex;flex-direction:column;gap:18px;margin-bottom:24px}
 .wl-step{display:flex;gap:16px;align-items:flex-start}
 .wl-step-num{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--rd);opacity:.7;line-height:1;min-width:28px}
-.wl-step strong{font-family:'IBM Plex Mono',monospace;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--chalk);display:block;margin-bottom:4px}
+.wl-step strong{font-family:'IBM Plex Mono',monospace;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:#ff5252;display:block;margin-bottom:4px}
 .wl-step p{font-size:.82rem;color:rgba(242,240,255,1);line-height:1.75;font-family:'IBM Plex Mono',monospace;margin:0}
-.wl-strip-note{font-size:.9rem;color:rgba(242,240,255,1);font-family:'IBM Plex Mono',monospace;line-height:1.6}
+.wl-strip-note{font-size:.9rem;color:rgb(255, 255, 255);font-family:'IBM Plex Mono',monospace;line-height:1.6}
 
 /* ═══════════════════════════════════════
    SPECIALS — EDITORIAL ROW LAYOUT
@@ -1183,7 +1183,7 @@ footer{
 .nc-step-title{
   font-family:'Bebas Neue',sans-serif;
   font-size:clamp(1.1rem,2.5vw,1.4rem);
-  color:var(--rd);letter-spacing:.06em;text-transform:uppercase;
+  color:#ff5252;letter-spacing:.06em;text-transform:uppercase;
   margin-bottom:5px;line-height:1.1;text-shadow:0 0 8px rgba(232,25,44,.25);
 }
 .nc-step-text{
@@ -1467,7 +1467,7 @@ footer{
   </div>
   <!-- RIGHT: image -->
   <div class="hero-right">
-    <img src="client10.png" alt="KCutyyy client haircut">
+    <img src="client15.png" alt="KCutyyy client haircut">
     <div class="hero-scroll">Scroll</div>
   </div>
 </section>
@@ -1509,7 +1509,7 @@ footer{
     <!-- LEFT: photo -->
     <div class="about-img-wrap">
       <div class="about-img-frame">
-        <img src="aboutme.png" alt="KCutyyy barber" style="object-position:center top">
+        <img src="about-2.png" alt="KCutyyy barber" style="object-position:center top">
       </div>
       <div class="about-badge">
         <div class="about-badge-num">5+</div>
@@ -1749,21 +1749,21 @@ footer{
       <div class="wl-step">
         <span class="wl-step-num">01</span>
         <div>
-          <strong>Book your service</strong>
+          <strong class="red">Book your service</strong>
           <p>Go through checkout as normal. If your date is full, Vagaro will show you the next available slot — or let you join the waitlist directly.</p>
         </div>
       </div>
       <div class="wl-step">
         <span class="wl-step-num">02</span>
         <div>
-          <strong>You get added automatically</strong>
+          <strong class="red" >You get added automatically</strong>
           <p>No extra form needed. Vagaro puts you in line the moment you click "Join Waitlist" inside the booking flow.</p>
         </div>
       </div>
       <div class="wl-step">
         <span class="wl-step-num">03</span>
         <div>
-          <strong>We reach out instantly</strong>
+          <strong class="red">We reach out instantly</strong>
           <p>The second a cancellation opens up, Vagaro notifies you by email or text. First to respond gets the slot.</p>
         </div>
       </div>
